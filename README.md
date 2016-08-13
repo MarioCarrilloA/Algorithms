@@ -1,4 +1,3 @@
-# Algorithms
 Algorithms collection
 =====================
 
