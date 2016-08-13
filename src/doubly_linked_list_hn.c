@@ -7,7 +7,14 @@ struct node {
 	struct node *back;
 };
 
-struct node *init ();
+struct node *init () {
+	struct node *list;
+	list = malloc(sizeof(struct node));
+	if (list == NULL)
+		exit(1);
+	else
+		list;
+}
 
 int insert(struct node *element);
 
