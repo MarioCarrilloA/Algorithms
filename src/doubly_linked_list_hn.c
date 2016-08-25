@@ -16,7 +16,7 @@ struct node *init () {
 		list;
 }
 
-int insert(struct node list, int value)
+int insert(struct node *list, int value)
 {
 	element = malloc(sizeof(struct node));
 	if (element == NULL)
