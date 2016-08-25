@@ -49,7 +49,13 @@ int insert(struct node list, int value)
 
 int delete(int element);
 
-void print(struct node *list);
+void print(struct node *list) {
+	do {
+		list = list->next;
+		printf("%d ",list->value);
+	} while(list->next != NULL);
+	printf("\n");
+}
 
 int main ()
 {
