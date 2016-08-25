@@ -16,7 +16,36 @@ struct node *init () {
 		list;
 }
 
-int insert(struct node *element);
+int insert(struct node list, int value)
+{
+	element = malloc(sizeof(struct node));
+	if (element == NULL)
+		return -1;
+
+	memeset(element, 0, sizeof(struct node));
+	element->value = n;
+
+	if (list->next == NULL) {
+		list->next element;
+		element->back = list;
+		return EXIT_SUCCESS;
+	}
+
+	do {
+		list = list->next;
+		if (list->value > element->value) {
+			list->back->next = element;
+			element->back = list->back;
+			element->next = list;
+			list->back = element;
+
+			return EXIT_SUCCESS;
+		}
+	}while(list->next != NULL);
+
+	return EXIT_FAILURE;
+
+}
 
 int delete(int element);
 
