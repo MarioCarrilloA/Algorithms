@@ -47,7 +47,24 @@ int insert(struct node list, int value)
 
 }
 
-int delete(int element);
+int delete(struct node *list, int element)
+{
+
+	do {
+		list = list->next;
+
+		if (list->value == element->value) {
+			list->back->next = list->next;
+			list->next->back = list->back;
+			free(list);
+
+			return EXIT_SUCCESS;
+		}
+
+	} while(list->next != NULL);
+
+	return EXIT_FAILURE;
+}
 
 void print(struct node *list) {
 	do {
