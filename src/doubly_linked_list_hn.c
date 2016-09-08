@@ -76,7 +76,30 @@ void print(struct node *list) {
 
 int main ()
 {
+	struct node *list;
+
 	printf("Doubly Linked List with Head Node");
+	list = init();
+	insert(list, 60);
+	print(list);
+	insert(list, 4);
+	print(list);
+	insert(list, 97);
+	print(list);
+	insert(list, 71);
+	print(list);
+	delete(list, 60);
+	print(list);
+	delete(list, 60);
+	print(list);
+	delete(list, 60);
+	print(list);
+	delete(list, 60);
+	print(list);
+	delete(list, 60);
+	print(list);
+	
+	free(list);
 
 	return EXIT_SUCCESS;
 }
