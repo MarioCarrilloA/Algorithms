@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <string.h>
 
 struct node {
 	int value;
@@ -18,15 +20,17 @@ struct node *init () {
 
 int insert(struct node *list, int value)
 {
+	struct node *element;
+
 	element = malloc(sizeof(struct node));
 	if (element == NULL)
 		return -1;
 
-	memeset(element, 0, sizeof(struct node));
-	element->value = n;
+	memset(element, 0, sizeof(struct node));
+	element->value = value;
 
 	if (list->next == NULL) {
-		list->next element;
+		list->next = element;
 		element->back = list;
 		return EXIT_SUCCESS;
 	}
@@ -53,7 +57,7 @@ int delete(struct node *list, int element)
 	do {
 		list = list->next;
 
-		if (list->value == element->value) {
+		if (list->value == element) {
 			list->back->next = list->next;
 			list->next->back = list->back;
 			free(list);
@@ -78,7 +82,7 @@ int main ()
 {
 	struct node *list;
 
-	printf("Doubly Linked List with Head Node");
+	printf("Doubly Linked List with Head Node\n");
 	list = init();
 	insert(list, 60);
 	print(list);
@@ -98,7 +102,7 @@ int main ()
 	print(list);
 	delete(list, 60);
 	print(list);
-	
+
 	free(list);
 
 	return EXIT_SUCCESS;
