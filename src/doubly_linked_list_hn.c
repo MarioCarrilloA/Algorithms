@@ -78,6 +78,9 @@ int delete(struct node *list, int element)
 }
 
 void print(struct node *list) {
+
+	if (list == NULL || list->next == NULL)
+		return;
 	do {
 		list = list->next;
 		printf("%d ",list->value);
