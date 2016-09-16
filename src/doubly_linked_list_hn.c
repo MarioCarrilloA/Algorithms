@@ -65,7 +65,8 @@ int delete(struct node *list, int element)
 
 		if (list->value == element) {
 			list->back->next = list->next;
-			list->next->back = list->back;
+			if (list->next != NULL)
+				list->next->back = list->back;
 			free(list);
 
 			return EXIT_SUCCESS;
@@ -101,13 +102,11 @@ int main ()
 
 	delete(list, 60);
 	print(list);
-	delete(list, 60);
+	delete(list, 97);
 	print(list);
-	delete(list, 60);
+	delete(list, 71);
 	print(list);
-	delete(list, 60);
-	print(list);
-	delete(list, 60);
+	delete(list, 4);
 	print(list);
 
 	free(list);
