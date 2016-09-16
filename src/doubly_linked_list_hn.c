@@ -28,6 +28,8 @@ int insert(struct node *list, int value)
 
 	memset(element, 0, sizeof(struct node));
 	element->value = value;
+	element->next = NULL;
+	element->back = NULL;
 
 	if (list->next == NULL) {
 		list->next = element;
@@ -37,6 +39,7 @@ int insert(struct node *list, int value)
 
 	do {
 		list = list->next;
+
 		if (list->value > element->value) {
 			list->back->next = element;
 			element->back = list->back;
@@ -47,7 +50,10 @@ int insert(struct node *list, int value)
 		}
 	}while(list->next != NULL);
 
-	return EXIT_FAILURE;
+	list->next = element;
+	element->back = list;
+
+	return EXIT_SUCCESS;
 
 }
 
@@ -92,6 +98,7 @@ int main ()
 	print(list);
 	insert(list, 71);
 	print(list);
+
 	delete(list, 60);
 	print(list);
 	delete(list, 60);
