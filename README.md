@@ -6,4 +6,5 @@ Include:
 - fibonacci
 	- Recursive
 	- Iterative
+- Double linked list
 
