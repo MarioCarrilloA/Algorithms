@@ -9,16 +9,16 @@ int binary_search(int v[], int num_elements, int element) {
 	int upper = num_elements - 1;
 
 	while (lower <= upper) {
-		centre = ((upper - lower) / 2) + upper;
+		centre = ((upper - lower) / 2) + lower;
 		if (v[centre] == element)
-			return EXIT_SUCCESS;
+			return 1;
 		else if (element < v[centre])
 			upper = centre - 1;
 		else
 			lower = centre + 1;
 	}
 
-	return EXIT_FAILURE;
+	return 0;
 }
 
 int main()
