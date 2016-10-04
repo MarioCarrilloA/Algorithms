@@ -7,4 +7,4 @@ Include:
 	- Recursive
 	- Iterative
 - Double linked list
-
+- Binary search
