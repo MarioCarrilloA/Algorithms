@@ -31,5 +31,10 @@ int main()
 	else
 		printf("No found\n");
 
+	if (binary_search(v, 7, 81))
+		printf("Found\n");
+	else
+		printf("No found\n");
+
 	return EXIT_SUCCESS;
 } 
