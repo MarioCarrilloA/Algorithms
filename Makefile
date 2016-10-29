@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-c -Wall
 
-all: bubble_sort fibonacci doubly_linked_list_hn binary_search
+all: bubble_sort fibonacci doubly_linked_list_hn binary_search binary_tree
 
 bubble_sort: src/bubble_sort.o
 	$(CC) src/bubble_sort.o -o bubble_sort
@@ -26,3 +26,10 @@ binary_search: src/binary_search.o
 
 binary_search.o: src/binary_search.c
 	$(CC) $(CFLAGS) src/binary_search.c
+
+binary_tree: src/binary_tree.o
+	$(CC) src/binary_tree.o -o binary_tree
+
+binary_tree.o: src/binary_tree.c
+	$(CC) $(CFLAGS) src/binary_tree.c
+
