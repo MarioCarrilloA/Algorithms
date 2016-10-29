@@ -3,8 +3,6 @@
 
 int fibo_recursive(int n)
 {
-	int value;
-
 	if (n == 0)
 		return 0;
 
