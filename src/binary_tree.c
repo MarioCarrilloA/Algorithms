@@ -10,7 +10,7 @@ struct tree {
 
 int insert(int num);
 
-int delete()int num;
+int delete(int num);
 
 int preorder(struct tree *root);
 
