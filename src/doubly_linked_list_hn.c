@@ -14,8 +14,7 @@ struct node *init () {
 	list = malloc(sizeof(struct node));
 	if (list == NULL)
 		exit(1);
-	else
-		list;
+	return list;
 }
 
 int insert(struct node *list, int value)
