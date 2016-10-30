@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 struct tree {
 	int num;
@@ -12,7 +13,6 @@ int insert(struct tree **root, int num)
 {
 	struct tree *new_node;
 
-	
 	if ((*root) == NULL) {
 		new_node = (struct tree*)malloc(sizeof(struct tree));
 		if (new_node == NULL)
@@ -30,8 +30,8 @@ int insert(struct tree **root, int num)
 		insert(&(*root)->left, num);
 	else if (num > (*root)->num)
 		insert(&(*root)->right, num);
-	else
-		return EXIT_SUCCESS;
+
+	return EXIT_SUCCESS;
 }
 
 int delete(int num);
@@ -44,7 +44,8 @@ int inorder(struct tree *root);
 
 int main()
 {
-	struct tree *root = NULL;
+//	struct tree *root = NULL;
+
 	printf("Binary tree\n");
 
 	return EXIT_SUCCESS;
