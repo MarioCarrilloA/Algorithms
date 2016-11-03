@@ -51,9 +51,17 @@ int inorder(struct tree *root)
 
 int main()
 {
-//	struct tree *root = NULL;
+	struct tree *root = NULL;
 
 	printf("Binary tree\n");
+
+	insert(&root, 7);
+	insert(&root, 10);
+	insert(&root, 2);
+	insert(&root, 1);
+	insert(&root, 19);
+	insert(&root, 50);
+	inorder(root);
 
 	return EXIT_SUCCESS;
 }
