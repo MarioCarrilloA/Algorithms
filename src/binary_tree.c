@@ -36,7 +36,14 @@ int insert(struct tree **root, int num)
 
 int delete(int num);
 
-int preorder(struct tree *root);
+int preorder(struct tree *root)
+{
+	if (root != NULL) {
+		printf("%d ", root->num);
+		preorder(root->left);
+		preorder(root->right);
+	}
+}
 
 int postorder(struct tree *root)
 {
@@ -71,6 +78,8 @@ int main()
 	inorder(root);
 	printf("\n");
 	postorder(root);
+	printf("\n");
+	preorder(root);
 	printf("\n");
 
 	return EXIT_SUCCESS;
