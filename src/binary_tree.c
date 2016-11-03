@@ -43,6 +43,8 @@ int preorder(struct tree *root)
 		preorder(root->left);
 		preorder(root->right);
 	}
+
+	return EXIT_SUCCESS;
 }
 
 int postorder(struct tree *root)
@@ -52,6 +54,8 @@ int postorder(struct tree *root)
 		postorder(root->right);
 		printf("%d ", root->num);
 	}
+
+	return EXIT_SUCCESS;
 }
 
 int inorder(struct tree *root)
@@ -61,6 +65,8 @@ int inorder(struct tree *root)
 		printf("%d ", root->num);
 		inorder(root->right);
 	}
+
+	return EXIT_SUCCESS;
 }
 
 int main()
