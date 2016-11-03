@@ -40,7 +40,14 @@ int preorder(struct tree *root);
 
 int postorder(struct tree *root);
 
-int inorder(struct tree *root);
+int inorder(struct tree *root)
+{
+	if (root != NULL) {
+		inorder(root->left);
+		printf("%d ", root->num);
+		inorder(root->right);
+	}
+}
 
 int main()
 {
