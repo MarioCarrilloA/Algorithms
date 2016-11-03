@@ -69,7 +69,9 @@ int main()
 	insert(&root, 19);
 	insert(&root, 50);
 	inorder(root);
+	printf("\n");
 	postorder(root);
+	printf("\n");
 
 	return EXIT_SUCCESS;
 }
